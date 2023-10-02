@@ -1,0 +1,604 @@
+.spotify {
+    height: 20rem;
+    width: 20rem;
+    background-color: #000000;
+    position: sticky;
+    top: 20rem;
+}
+
+.youtube {
+    height: 20rem;
+    width: 20rem;
+    background-color: #000000;
+    position: sticky;
+    top: 20rem;
+}
+
+/* Task Section */
+.task-panel {
+    margin-top: 2rem;
+    gap: 12rem;
+}
+
+.dailies {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 28rem;
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 28rem;
+}
+
+.category-3 {
+    display: flex;
+    position: relative;
+    min-height: 28rem;
+}
+
+.category-4 {
+    display: flex;
+    position: relative;
+    min-height: 28rem;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bind-task {
+    width: 145%;
+    height: 5rem;
+}
+
+.task {
+    background-color: #fff;
+    height: 3rem;
+    width: 25rem;
+    border-radius: 5px;
+    color: black;
+    transition-duration: 100ms;
+    position: relative;
+    left: -6rem;
+}
+
+.bind-task:hover .task {
+    scale: 1.1;
+    transition-duration: 100ms;
+}
+
+.task-title {
+    font-weight: bold;
+}
+
+.bind-contents {
+    gap: 15rem;
+}
+
+
+/* Action button */
+.actions {
+    gap: 2rem;
+}
+
+.hover-actions {
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+.bind-task:hover .hover-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition-duration: 200ms;
+}
+
+.hover-actions-buttons {
+    height: 30px;
+    width: 30px;
+    border-radius: 20rem;
+    cursor: pointer;
+    text-align: center;
+    font-size: small;
+}
+
+.task-edit {
+    background-color: #3ecfff;
+    transition-duration: 200ms;
+    color: #fff;
+}
+.task-edit:hover {
+    background-color: #30a4cb;
+    transition-duration: 200ms;
+    scale: 1.1;
+}
+
+.task-edit:active {
+    scale: 1;
+}
+
+.bind-task:hover .task-edit {
+    position: absolute;
+    animation: linear forwards;
+    animation-name: slide-edit;
+    animation-duration: 100ms;
+}
+
+.task-complete {
+    background-color: #01b501;
+    transition-duration: 200ms;
+    color: #fff;
+}
+
+.task-complete:hover {
+    background-color: green;
+    transition-duration: 200ms;
+    scale: 1.1;
+}
+
+.task-complete:active {
+    scale: 1;
+}
+
+.bind-task:hover .task-complete {
+    position: absolute;
+    animation: linear forwards;
+    animation-name: slide-complete;
+    animation-duration: 100ms;
+}
+
+.task-delete {
+    background-color: red;
+    transition-duration: 200ms;
+    color: #fff;
+}
+.task-delete:hover {
+    background-color: #b30000;
+    transition-duration: 200ms;
+    scale: 1.1;
+}
+
+.task-delete:active {
+    scale: 1;
+}
+
+.bind-task:hover .task-delete {
+    position: absolute;
+    animation: linear forwards;
+    animation-name: slide-delete;
+    animation-duration: 100ms;
+}
+
+@keyframes slide-edit {
+    0% {
+        opacity: 0;
+        left: 0.3rem;
+        top: -1rem;
+    }
+    50% {
+        opacity: 0.5;
+        left: 0.6rem;
+        top: -2rem;
+    }
+    100% {
+        opacity: 1;
+        left: 1rem;
+        top: -3rem;
+    }
+}
+
+@keyframes slide-complete {
+    0% {
+        opacity: 0;
+        left: 1rem;
+    }
+    50% {
+        opacity: 0.5;
+        left: 2rem;
+    }
+    100% {
+        opacity: 1;
+        left: 3rem;
+    }
+}
+
+@keyframes slide-delete {
+    0% {
+        opacity: 0;
+        left: 0.3rem;
+        bottom: -1rem;
+    }
+    50% {
+        opacity: 0.5;
+        left: 0.6rem;
+        bottom: -2rem;
+    }
+    100% {
+        opacity: 1;
+        left: 1rem;
+        bottom: -3rem;
+    }
+}
+
+.static-actions {
+    gap: 2rem;
+}
+
+.timer-no {
+    fill: #5e5e5e90;
+    color: #5e5e5e90;
+}
+
+.clock {
+    
+}
+
+/* Clock CSS */
+
+.start-pause {
+    cursor: pointer;
+}
+
+.timer-on {
+    stroke: rgb(0, 193, 0);
+    transition-duration: 300ms;
+}
+
+.timer-off {
+    stroke: gold;
+    transition-duration: 300ms;
+}
+
+#clockSVG {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    scale: 1.15;
+}
+
+#clockHand {
+    animation: clock-hand-360 1000ms linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes clock-hand-360 { 
+    0% {
+        transform: translate(150px,149.938856px) rotate(0deg);
+    } 
+    30% {
+        transform: translate(150px,149.938856px) rotate(0deg);
+        animation-timing-function: cubic-bezier(0.645,0.045,0.355,1);
+    }
+    100% {
+        transform: translate(150px,149.938856px) rotate(360deg);
+    }
+}
+
+#clockStartPushHorizontal {
+    animation: none;
+    animation-play-state: paused;
+}
+
+@keyframes clock-start-push-horizontal {
+    0% {
+        transform: translate(150px,116.539468px);
+    }
+    10% {
+        transform: translate(150px,115.539468px);
+    }
+    20% {
+        transform: translate(150px,118.539468px);
+    }
+    30% {
+        transform: translate(150px,116.539468px);
+    }
+    100% {
+        transform: translate(150px,116.539468px);
+    }
+}
+
+#clockStartPushVertical {
+    animation: none;
+    animation-play-state: paused;
+}
+
+@keyframes clock-start-push-vertical {
+    0% {
+        transform: translate(150px,113.052344px);
+    }
+    10% {
+        transform: translate(150px,111.052344px);
+    }
+    20% {
+        transform: translate(150px,115.052344px);
+    }
+    30% {
+        transform: translate(150px,113.052344px);
+    }
+    100% {
+        transform: translate(150px,113.052344px);
+    }
+}
+
+#clockSideButton {
+    animation: none;
+    animation-play-state: paused;
+}
+
+@keyframes clock-side-button-push {
+    0% {
+        transform: translate(177.301008px,132.669227px);
+    }
+    10% {
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate(175px,135px);
+    }
+    40% {
+        transform: translate(177.301008px,132.669227px);
+    }
+}
+
+
+/* Add new task button */
+/* .add-task {
+    
+} */
+
+.add-task-btn {
+    /* Config start */
+    --plus_sideLength: 2.5rem;
+    --plus_topRightTriangleSideLength: 0.9rem;
+    /* Config end */
+    position: relative;
+    border: 1px solid gold;
+    border-radius: 5px;
+    width: var(--plus_sideLength);
+    height: var(--plus_sideLength);
+    background-color: #000000;
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+.add-task-btn::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+    border-style: solid;
+    border-color: transparent gold transparent transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.add-task-btn:hover {
+    cursor: pointer;
+}
+
+.add-task-btn:hover::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.add-task-btn:focus-visible::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.add-task-btn > .add-task-icon {
+    fill: white;
+    width: calc(var(--plus_sideLength) * 0.7);
+    height: calc(var(--plus_sideLength) * 0.7);
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+  
+.add-task-btn:hover > .add-task-icon {
+    fill: black;
+    transform: rotate(180deg);
+}
+
+.add-task-btn:focus-visible > .add-task-icon {
+    fill: black;
+    transform: rotate(180deg);
+}
+
+.add-task-btn:active {
+    scale: 0.9;
+    transition-duration: 200ms;
+}
+
+
+/* Tooltip CSS */
+
+/* Defaults */
+.tooltip {
+    width: 3.5rem;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    background-color: #4d4c4c;
+    color: #fff;
+    padding: 0.3rem;
+    border-radius: 5px;
+    scale: 1;
+    user-select: none;
+    opacity: 0;
+}
+
+.tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #4d4c4c;
+    bottom: 0.4rem;
+    left: 0;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip-contents {
+    font-size: x-small;
+}
+
+/* Hover action tooltip */
+.tooltip-edit, .tooltip-complete, .tooltip-delete {
+    position: absolute;
+    left: 2.5rem;
+    animation: linear forwards;
+    animation-name: slide-tooltip-actions-backward;
+    animation-duration: 100ms;
+}
+
+.task-edit:hover .tooltip-edit, .task-complete:hover .tooltip-complete, .task-delete:hover .tooltip-delete {
+    display: flex;
+    animation: linear forwards;
+    animation-name: slide-tooltip-actions-forward;
+    animation-duration: 100ms;
+    scale: 0.8;
+    opacity: 0;
+}
+
+@keyframes slide-tooltip-actions-forward {
+    0% {
+        scale: 0.9;
+        opacity: 0;
+        left: 2.5rem;
+    }
+    50% {
+        scale: 0.9;
+        opacity: 0.5;
+        left: 2.75rem;
+    }
+    100% {
+        scale: 0.9;
+        opacity: 1;
+        left: 2.8rem;
+    }
+}
+
+@keyframes slide-tooltip-actions-backward{
+    0% {
+        display: flex;
+        scale: 0.9;
+        opacity: 1;
+        left: 2.8rem;
+    }
+    50% {
+        display: flex;
+        scale: 0.9;
+        opacity: 0.5;
+        left: 2.75rem;
+    }
+    100% {
+        display: none;
+        scale: 0.9;
+        opacity: 0;
+        left: 2.5rem;
+    }
+}
+
+/* New task tooltip */
+.tooltip-add-task {
+    position: absolute;
+    left: 50rem;
+    animation: linear forwards;
+    animation-name: slide-tooltip-add-task-backward;
+    animation-duration: 100ms;
+}
+
+.add-task-btn:hover + .tooltip-add-task {
+    display: flex;
+    position: absolute;
+    animation: linear forwards;
+    animation-name: slide-tooltip-add-task-forward;
+    animation-duration: 100ms;
+}
+
+@keyframes slide-tooltip-add-task-forward {
+    0% {
+        scale: 1;
+        opacity: 0;
+        left: 50.5rem;
+    }
+    50% {
+        scale: 1.05;
+        opacity: 0.5;
+        left: 50.8rem;
+    }
+    100% {
+        scale: 1.1;
+        opacity: 1;
+        left: 51rem;
+    }
+}
+
+@keyframes slide-tooltip-add-task-backward {
+    0% {
+        display: flex;
+        scale: 1.1;
+        opacity: 1;
+        left: 51rem;
+    }
+    50% {
+        display: flex;
+        scale: 1.05;
+        opacity: 0.5;
+        left: 50.8rem;
+    }
+    100% {
+        display: none;
+        scale: 1;
+        opacity: 0;
+        left: 50rem;
+    }
+}
+
+
+/* Pagination */
+
+/* Defaults */
+
+.pagination {
+    position: absolute;
+    left: 7.63rem;
+    right: 7.63rem;
+    bottom: -2rem;
+}
+
+.pagination-contents {
+    gap: 0.8rem;
+    text-align: center;
+}
+
+.pages {
+    cursor: pointer;
+}
+.pages:hover {
+    text-decoration: underline;
+}

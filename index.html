@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/069ddac36c.js" crossorigin="anonymous"></script>
+
+    <!-- Customs CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/category.css">
+    <link rel="stylesheet" href="./styles/task.css">
+
+    <title>Todo (Test Version)</title>
+</head>
+<body>
+    
+<!-- Header -->
+<header class="header">
+    <h1>Todo List [Concept]</h1>
+    <hr />
+</header>
+
+<!-- Category Section -->
+<section class="flex-row categories-panel" id="categoriesPanel">
+
+    <!-- Default categories (Dailies and Work) -->
+    <div class="default-category">
+        <input type="radio" id="dailies" name="category" value="dailies" checked="true"></input>
+        <label for="dailies" class="category-label active font">Dailies</label>
+    </div>
+    <div class="default-category">
+        <input type="radio" id="work" name="category" value="work"></input>
+        <label for="work" class="category-label font">Work</label>
+    </div>
+
+    <!-- Add New Category Button -->
+    <button id="category-add" class="add-icon font" title="Add Category" onclick="inputCategory()"><i class="icon fa-solid fa-plus"></i></button>
+</section>
+
+
+<!-- Task Section -->
+<section class="flex-row task-panel">
+
+
+    <!-- <div class="spotify"></div> -->
+
+    <!-- Default Task Sections -->
+
+    <!-- Dailies Task -->
+    <div class="dailies" id="forDailies">
+        <div class="container">
+
+            <div class="task-container">
+
+                <div class="flex-row bind-task" id="1x1">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x1Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+                <div class="flex-row bind-task" id="1x2">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x2Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+                <div class="flex-row bind-task" id="1x3">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x3Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+                <div class="flex-row bind-task" id="1x4">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x4Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+                <div class="flex-row bind-task" id="1x5">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x5Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+            </div> <!-- task-container -->
+
+            <div class="flex-row add-task">
+                <div class="flex-row add-task-btn">
+                    <svg class="add-task-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                    </svg>
+                </div>
+                <div class="tooltip tooltip-add-task">
+                    <span class="tooltip-contents">Add Task</span>
+                </div>
+            </div> <!-- add-task -->
+
+        </div> <!-- container -->
+
+        <div class="flex-row pagination" id="dailiesPagination">
+            <div class="flex-row pagination-contents">
+                <i class="fa-solid fa-angles-left"></i>
+                <i class="fa-solid fa-angle-left"></i>
+                <div class="pages dailies-page page-1">1</div>
+                <div class="pages dailies-page page-2">2</div>
+                <div class="pages dailies-page page-3">3</div>
+                <i class="fa-solid fa-angle-right"></i>
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div> <!-- pagination -->
+    </div> <!-- dailies -->
+
+    <!-- Work Task -->
+    <div class="work" id="forWork">
+        <div class="container">
+
+            <div class="task-container">
+                <div class="flex-row bind-task" id="1x8">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x8Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+                <div class="flex-row bind-task" id="1x9">
+                    <div class="flex-row task">
+                        <div class="flex-row bind-contents">
+                            <div class="task-title">Title</div>
+                            <div class="flex-row actions">
+                                <div class="hover-actions">
+                                    <div class="flex-row hover-actions-buttons task-edit">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <div class="tooltip tooltip-edit">
+                                            <span class="tooltip-contents">Edit</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-complete">
+                                        <i class="fa-solid fa-check"></i>
+                                        <div class="tooltip tooltip-complete">
+                                            <span class="tooltip-contents">Mark as Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-row hover-actions-buttons task-delete">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        <div class="tooltip tooltip-delete">
+                                            <span class="tooltip-contents">Remove</span>
+                                        </div>
+                                    </div>
+                                </div> <!-- hover-actions -->
+                                <div class="flex-row static-actions timer-yes">
+                                    <div class="clock">
+                                        <span class="timer">00:00</span>
+                                    </div>
+                                    <div title="Start/Pause" class="start-pause" id="1x9Timer">
+                                        <svg viewBox="112 109 75 75" height="30" width="30" id="clockSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                            <!-- Clock hand -->
+                                            <g id="clockHand" transform="translate(150,149.938856) rotate(0)">
+                                                <line x1="0" y1="11.629861" x2="0" y2="-11.629861" transform="scale(1,0.814234) translate(0,-11.629861)" fill="none" stroke="black  " stroke-width="6" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock side button -->
+                                            <g id="clockSideButton" transform="translate(177.301008,132.669227)">
+                                                <line x1="-6.301008" y1="-5.669227" x2="-4.301008" y2="-7.669227" transform="translate(0,0)" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- Clock push button -->
+                                            <g>
+                                                <!-- Horizontal -->
+                                                <g id="clockStartPushHorizontal" transform="translate(150,116.539468)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="scale(1,0.537174) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                                <!-- Vertical -->
+                                                <g id="clockStartPushVertical" transform="translate(150,113.052344)">
+                                                    <line x1="0" y1="-6.589054" x2="0" y2="6.589054" transform="rotate(89.561355) scale(-1,1.037666) translate(0,0)" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+                                                </g>
+                                            </g>
+                                            <!-- Clock Circle -->
+                                            <ellipse class="timer-off" rx="28.084494" ry="28.084494" transform="translate(150 150)" paint-order="stroke fill markers" fill="rgba(39,200,29,0)" stroke="" stroke-width="7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div> <!-- static-actions -->
+                            </div> <!-- actions -->
+                        </div> <!-- bind-contents -->
+                    </div> <!-- task -->
+                </div> <!-- bind-task -->
+            </div> <!-- task-container -->
+
+            <div class="flex-row add-task">
+                <div class="flex-row add-task-btn">
+                    <svg class="add-task-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                    </svg>
+                </div>
+                <div class="tooltip tooltip-add-task">
+                    <span class="tooltip-contents">Add Task</span>
+                </div>
+            </div> <!-- add-task -->
+
+        </div> <!-- container -->
+
+        <div class="flex-row pagination" id="workPagination">
+            <div class="flex-row pagination-contents">
+                <i class="fa-solid fa-angles-left"></i>
+                <i class="fa-solid fa-angle-left"></i>
+                <div class="pages work-page page-1">1</div>
+                <div class="pages work-page page-2">2</div>
+                <div class="pages work-page page-3">3</div>
+                <i class="fa-solid fa-angle-right"></i>
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div> <!-- pagination -->
+    </div> <!-- work -->
+
+    <!-- User-Defined Task Section -->
+
+    <!-- <div class="youtube"></div> -->
+
+</section>
+
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<!-- Custom Script (Category) -->
+<script src="scripts/category.js"></script>
+<!-- Custom Script (Task) -->
+<script src="scripts/task.js"></script>
+
+</body>
+</html>
