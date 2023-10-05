@@ -32,7 +32,7 @@ function addTaskCategory() {
     // Create a new Task section with corresponding category title
     let newTaskCategory = 
         `<div class='category-${categoryNumber+1} ${categoryTitle}' id='for${categoryTitle}'>` + 
-            '<div class-"container">' + 
+            '<div class="container">' + 
                 '<div class="task-container">' + 
                 '</div>' + //task-container
                 '<div class="flex-row add-task">' + 

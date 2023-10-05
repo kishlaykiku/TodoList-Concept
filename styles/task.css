@@ -53,6 +53,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    min-width: 25rem;
 }
 
 .task-container {
@@ -360,9 +361,9 @@
 
 
 /* Add new task button */
-/* .add-task {
-    
-} */
+.add-task {
+    position: relative;
+}
 
 .add-task-btn {
     /* Config start */
@@ -526,7 +527,7 @@
 /* New task tooltip */
 .tooltip-add-task {
     position: absolute;
-    left: 50rem;
+    left: 15rem;
     animation: linear forwards;
     animation-name: slide-tooltip-add-task-backward;
     animation-duration: 100ms;
@@ -544,17 +545,17 @@
     0% {
         scale: 1;
         opacity: 0;
-        left: 50.5rem;
+        left: 15rem;
     }
     50% {
         scale: 1.05;
         opacity: 0.5;
-        left: 50.8rem;
+        left: 15.5rem;
     }
     100% {
         scale: 1.1;
         opacity: 1;
-        left: 51rem;
+        left: 16rem;
     }
 }
 
@@ -563,19 +564,19 @@
         display: flex;
         scale: 1.1;
         opacity: 1;
-        left: 51rem;
+        left: 16rem;
     }
     50% {
         display: flex;
         scale: 1.05;
         opacity: 0.5;
-        left: 50.8rem;
+        left: 15.5rem;
     }
     100% {
         display: none;
         scale: 1;
         opacity: 0;
-        left: 50rem;
+        left: 15rem;
     }
 }
 
