@@ -353,7 +353,7 @@
             </div> <!-- task-container -->
 
             <div class="flex-row add-task">
-                <div class="flex-row add-task-btn">
+                <div class="flex-row add-task-btn" onclick="openForm()">
                     <svg class="add-task-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                         <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
                     </svg>
@@ -387,7 +387,7 @@
             </div> <!-- task-container -->
 
             <div class="flex-row add-task">
-                <div class="flex-row add-task-btn">
+                <div class="flex-row add-task-btn" onclick="openForm()">
                     <svg class="add-task-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                         <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
                     </svg>
@@ -415,6 +415,49 @@
     <!-- User-Defined Task Section -->
 
     <!-- <div class="youtube"></div> -->
+
+    <!-- New Task Popup Form -->
+    <div class="popup-wrapper">
+        <div class="new-task-backdrop glass"></div>
+        <div class="form-main">
+            <div class="flex-col new-task-popup-form">
+                <div class="flex-row new-task-header">
+                    <h2>Add Task</h2>
+                </div>
+
+                <form method="POST" id="newTaskForm">
+                    <div class="flex-col task-form-container">
+                        <div class="flex-col title">
+                            <label for="title">Title</label>
+                            <input type="text" />
+                        </div>
+                        <div class="flex-col time">
+                            <div class="flex-row">
+                                <label for="time">Include Time</label>
+                                <label class="checkBox">
+                                    <input id="ch1" type="checkbox">
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <input type="time" />
+                        </div>
+                        <div class="flex-col description">
+                            <label for="description">Description</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="flex-row form-actions-container">
+                <div class="flex-row form-action form-cancel" onclick="closeForm()">
+                    <i class="icon fa-solid fa-xmark"></i>
+                </div>
+                <div class="flex-row form-action form-push" >
+                    <i class="icon fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+    </div> <!-- new task popup form-->
 
 </section>
 

@@ -36,7 +36,7 @@ function addTaskCategory() {
                 '<div class="task-container">' + 
                 '</div>' + //task-container
                 '<div class="flex-row add-task">' + 
-                    '<div class="flex-row add-task-btn">' + 
+                    '<div class="flex-row add-task-btn" onclick="openForm()">' + 
                         '<svg class="add-task-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">' + 
                             '<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>' + 
                         '</svg>' + 
@@ -97,6 +97,27 @@ function toggleTimer(taskID) {
                                    'animation': 'none'});
     }
 }
+
+
+// Popup Form
+function openForm() {
+    $('.popup-wrapper').addClass('popup-wrapper-show');
+    $('.new-task-backdrop').removeClass('backdrop-out');
+    $('.new-task-backdrop').addClass('backdrop-in');
+    $('.form-main').removeClass('form-out');
+    $('.form-main').addClass('form-in');
+}
+function closeForm()
+{
+    $('.new-task-backdrop').removeClass('backdrop-in');
+    $('.new-task-backdrop').addClass('backdrop-out');
+    $('.form-main').removeClass('form-in');
+    $('.form-main').addClass('form-out');
+    setTimeout(function () {
+        $('.popup-wrapper').removeClass('popup-wrapper-show');
+    }, '150')
+}
+
 
 // First function call to check which category is active
 checkActive();
