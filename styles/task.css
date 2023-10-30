@@ -410,7 +410,6 @@
     fill: white;
     width: calc(var(--plus_sideLength) * 0.7);
     height: calc(var(--plus_sideLength) * 0.7);
-    z-index: 1;
     transition-timing-function: ease-in-out;
     transition-duration: 0.2s;
 }
@@ -580,6 +579,257 @@
     }
 }
 
+/* New Task Popup Form */
+.popup-wrapper {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.popup-wrapper-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.glass {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    /* backdrop-filter: blur(10px); */
+}
+
+.new-task-backdrop {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.backdrop-in {
+    animation: linear forwards;
+    animation-name: backdrop-in;
+    animation-duration: 100ms;
+    opacity: 1;
+}
+
+.backdrop-out {
+    animation: linear forwards;
+    animation-name: backdrop-out;
+    animation-duration: 100ms;
+    opacity: 0;
+}
+
+@keyframes backdrop-in {
+    0% {
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    20% {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.435);
+    }
+    40% {
+        background-color: rgba(0, 0, 0, 0.588);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.867);
+    }
+}
+
+@keyframes backdrop-out {
+    0% {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.867);
+    }
+    20% {
+        background-color: rgba(0, 0, 0, 0.588);
+    }
+    40% {
+        background-color: rgba(0, 0, 0, 0.435);
+    }
+    100% {
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.form-main {
+    z-index: 999;
+}
+
+.new-task-popup-form {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #161b1e;
+}
+
+.form-in {
+    animation: linear forwards;
+    animation-name: form-in;
+    animation-duration: 100ms;
+    opacity: 1;
+}
+
+.form-out {
+    animation: linear forwards;
+    animation-name: form-out;
+    animation-duration: 100ms;
+    opacity: 0;
+}
+
+@keyframes form-in {
+    0% {
+        opacity: 0;
+        scale: 1.3;
+    }
+    20% {
+        opacity: 0.5;
+        scale: 1.2;
+    }
+    40% {
+        opacity: 1;
+        scale: 1.1;
+    }
+    60% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes form-out {
+    0% {
+        opacity: 1;
+        scale: 1;
+    }
+    20% {
+        opacity: 0.5;
+        scale: 1.1;
+    }
+    40% {
+        opacity: 0;
+        scale: 1.2;
+    }
+    60% {
+        opacity: 0;
+        scale: 1.3;
+    }
+}
+
+.new-task-header {
+    
+}
+
+#newTaskForm {
+    padding: 25px;
+}
+
+.task-form-container {
+    gap: 1.3rem;
+    align-items: flex-start;
+}
+
+.title, .time, .description {
+    align-items: flex-start;
+}
+
+.checkBox {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px #fff;
+}
+  
+.checkBox div {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    top: -52px;
+    left: -52px;
+    position: absolute;
+    transform: rotateZ(45deg);
+    z-index: 100;
+}
+  
+.checkBox input[type=checkbox]:checked + div {
+    left: -10px;
+    top: -10px;
+}
+  
+.checkBox input[type=checkbox] {
+    position: absolute;
+    left: 50px;
+    visibility: hidden;
+}
+  
+.transition {
+    transition: 300ms ease;
+}
+
+.form-actions-container {
+    gap: 5rem;
+}
+
+.form-action {
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #161b1e;
+    border: 3px solid #fff;
+    color: #000;
+    border-radius: 50%;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+
+.form-action:active {
+    scale: 0.8;
+    transition-duration: 100ms;
+}
+
+.form-action .icon {
+    color: #000;
+    font-size: xx-large;
+}
+
+.form-action .fa-check {
+    color: greenyellow;
+    transition-duration: 200ms;
+}
+
+.form-push:hover .fa-check{
+    color: green;
+    transition-duration: 200ms;
+}
+
+.form-action .fa-xmark {
+    color: pink;
+    transition-duration: 200ms;
+}
+
+.form-cancel:hover .fa-xmark{
+    color: red;
+    transition-duration: 200ms;
+}
+
+.form-push {
+    
+}
+
+.form-cancel {
+
+}
 
 /* Pagination */
 
