@@ -726,6 +726,11 @@
     
 }
 
+.new-task-category {
+    height: 0rem;
+    margin-bottom: 2rem;
+}
+
 #newTaskForm {
     padding: 25px;
 }

@@ -116,8 +116,24 @@ function closeForm()
     setTimeout(function () {
         $('.popup-wrapper').removeClass('popup-wrapper-show');
     }, '150')
+    $('.new-task-category-header').remove();
+    $('.new-task-category').append('<h4 class="new-task-category-header"></h4>')
 }
 
+
+//
+$(document).on("click", ".add-task-btn", function() {
+
+    $('.categories-panel div label').each(function () {
+        if($(this).hasClass("active")) {
+            let text = $(this).text();
+            let label_for = $(this).attr('for');
+
+            $(".new-task-category-header").text(`[${text}]`);
+            $(".new-task-category-header").attr('value', `${label_for}`);
+        }
+    });
+})
 
 // First function call to check which category is active
 checkActive();

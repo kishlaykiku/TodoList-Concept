@@ -29,7 +29,7 @@ body {
     align-items: center;
 }
 
-.flex-column {
+.flex-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
